@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>news databases</title>
+    <style>
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li><a href="/user">Trang chủ</a></li>
+    </ul>
+
+    <div style="font-size: 50px;text-align: center;color: green;margin: 20px auto">Hiện tin đã đăng
+    </div>
+
+    <table style="margin: 20px auto;width: 100%;">
+        <thead>
+            <th>Name</th>
+            <th>Time</th>
+            <th>Author</th>
+            <th>Type</th>
+            <th>Xem</th>
+            <th>Xóa</th>
+            <th>Sửa</th>
+        </thead>
+        <tbody>
+            <% 
+                    results.forEach(function(rows){
+                    %>
+                <tr>
+
+                    <td>
+                        <%=rows.name%>
+                    </td>
+
+                    <td>
+                        <%=rows.time%>
+                    </td>
+                    <td>
+                        <%=rows.author%>
+                    </td>
+                    <td>
+                        <%=rows.type%>
+                    </td>
+                    <td>
+                        <a href="/user/chitiet/<%=rows.type%>/<%=rows.id%>">More</a>
+                    </td>
+                    <td>
+                        <a href="/user/delete/<%=rows.type%>/<%=rows.id%>">Delete</a>
+                    </td>
+                    <td>
+                        <a href="/user/suatin/<%=rows.type%>/<%=rows.id%>">Sửa tin</a>
+                    </td>
+
+                </tr>
+                <%
+                    }) 
+                %>
+        </tbody>
+    </table>
+
+    <div style="background-color: black;text-align: center;">
+        <a href="/dangxuat" style="color: white;">Đăng Xuất</a>
+    </div>
+
+</body>
+
+</html>

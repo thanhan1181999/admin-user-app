@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thêm tin</title>
+    <style>
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 1px;
+            box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+            background-color: green;
+        }
+        
+        div {
+            background-color: #f2f2f2;
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        
+        .div1 {
+            border: 1px solid red;
+        }
+        
+        .div2 {
+            background-color: aqua;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li><a href="/user">Trang chủ</a></li>
+    </ul>
+
+    <div style="font-size: 50px;text-align: center;color: green;margin: 20px auto">Thêm Một Trang Tin</div>
+
+    <div>
+        <form action="" method="POST">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-3" style="background-color:green;">
+
+                        <div class="div1 div2">TYPE</div>
+                        <div class="div1 div2">HOT</div>
+                        <div class="div1 div2">NAME</div>
+                        <div class="div1 div2">TIME</div>
+                        <div class="div1 div2">TÁC GIẢ</div>
+                        <div class="div1 div2">CONTENT1</div>
+                        <div class="div1 div2">CONTENT2</div>
+                        <div class="div1 div2">CONTENT3</div>
+                        <div class="div1 div2">CONTENT4</div>
+                        <div class="div1 div2">CONTENT5</div>
+                        <div class="div1 div2">IMGAGE1</div>
+                        <div class="div1 div2">IMAGE2</div>
+                    </div>
+                    <div class="col-sm-9" style="background-color:green;">
+                        <select name="type" type="text" autocomplete="off">
+                                <option value="bongda">Bóng đá</option>
+                                <option value="kinhdoanh">Kinh doanh</option>
+                                <option value="thitruong">Thị trường</option>
+                                <option value="suckhoe">Sức khỏe</option>
+                                <option value="hitech">Hi-Tech</option>
+                                <option value="showbiz">Showbiz</option>
+                                <option value="thegioi">Thế Giới</option>
+                                <option value="thethao">Thể thao</option>
+                                <option value="phaidep">Phái đẹp</option>
+                                <option value="amthuc">Ẩm thực</option>
+                        </select>
+                        <select name="hot" type="text" autocomplete="off">
+                          <option value="N">Không là tin hót</option>
+                        </select>
+                        <input name="name" type="text" placeholder="Your Name.." autocomplete="off">
+                        <input name="time" type="text" placeholder="Your Time.." autocomplete="off">
+                        <input name="author" type="text" placeholder="Your Author.." autocomplete="off">
+                        <input name="content1" type="text" placeholder="Your Content.." autocomplete="off">
+                        <input name="content2" type="text" placeholder="Your Content.." autocomplete="off">
+                        <input name="content3" type="text" placeholder="Your Content.." autocomplete="off">
+                        <input name="content4" type="text" placeholder="Your Content.." autocomplete="off">
+                        <input name="content5" type="text" placeholder="Your Content.." autocomplete="off">
+                        <input name="image1" type="text" placeholder="Your link image.." autocomplete="off">
+                        <input name="image2" type="text" placeholder="Your link image.." autocomplete="off">
+                    </div>
+
+                </div>
+            </div>
+            <input type="submit" value="Thêm tin">
+        </form>
+    </div>
+    <div style="background-color: black;text-align: center;margin: 50px auto;">
+        <a href="/dangxuat" style="color: white;">Đăng Xuất</a>
+    </div>
+</body>
+
+</html>

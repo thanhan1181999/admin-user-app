@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Góp Ý</title>
+</head>
+
+<body>
+    <table style="margin: 20px auto;width: 100%;">
+        <thead>
+            <th>Name</th>
+            <th>address</th>
+            <th>feedback</th>
+        </thead>
+        <tbody>
+            <% 
+                    results.forEach(function(rows){
+                    %>
+                <tr>
+
+                    <td>
+                        <%=rows.name%>
+                    </td>
+
+                    <td>
+                        <%=rows.address%>
+                    </td>
+                    <td>
+                        <%=rows.feedback%>
+                    </td>
+                    <td>
+                        <a href="xoagopy/<%=rows.id%>">Delete</a>
+                    </td>
+
+                </tr>
+                <%
+                    }) 
+                %>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

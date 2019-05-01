@@ -1,0 +1,18 @@
+table,
+tr,
+th,
+td {
+    border: 1px solid red;
+}
+
+tr,
+th,
+td,
+thead {
+    margin: 3px;
+    text-align: center;
+}
+
+.cotChan {
+    background-color: violet;
+}
