@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../web/css/addNew.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Roboto", sans-serif;
+        }
+        
+        .w3-sidebar {
+            z-index: 3;
+            width: 250px;
+            top: 43px;
+            bottom: 0;
+            height: inherit;
+        }
+        
+        a:hover,
+        a:active {
+            text-decoration: none;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+            <a href="/user" class="w3-bar-item w3-button w3-hide-small w3-hover-white ">Home</a>
+            <a href="/xemtindadang/<%=userID%>" class="w3-bar-item w3-button w3-hide-small ">Articles</a>
+            <a href="#" class="w3-bar-item w3-button  w3-theme-l5 w3-hover-white">About</a>
+            <a href="/dangxuat" class="w3-bar-item w3-button w3-hide-small w3-hover-white">LogOut</a>
+        </div>
+    </div>
+
+    <div class="w3-main" style="margin-left:200px">
+        <div class="w3-container" style="margin-top: 50px">
+            <div>
+                <div class="page-wrapper ">
+                    <div class="wrapper wrapper--w790">
+                        <div class="card card-5">
+                            <div class="card-heading">
+                                <h1 class="w3-text-teal w3-center">Sửa tài khoản</h1>
+                            </div>
+
+                            <div class="card-body">
+                                <form action="" method="POST" name="add" onsubmit=" return check()">
+
+                                    <div class="form-row">
+                                        <div class="name">Họ tên</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="text" name="name" value="<%=results[0].name%>" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="name">Tên đăng nhập</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input type="text" class="input--style-5" name="user" value="<%=results[0].user%>" autocomplete="off" readonly>
+                                                <!-- <textarea style="width: 100%"  rows = "1" class="input--style-5" type="text" name="name1" autocomplete="off"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="name">Mật khẩu</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input type="text" class="input--style-5" name="password" value="<%=results[0].password%>" autocomplete="off">
+                                                <!-- <textarea style="width: 100%"  rows = "1" class="input--style-5" type="text" name="name1" autocomplete="off"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="name">Email</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input type="text" class="input--style-5" name="email" value="<%=results[0].email%>" autocomplete="off">
+                                                <!-- <textarea style="width: 100%"  rows = "1" class="input--style-5" type="text" name="name1" autocomplete="off"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="name">Số điện thoại</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input type="text" class="input--style-5" name="phone" value="<%=results[0].phone%>" autocomplete="off">
+                                                <!-- <textarea style="width: 100%"  rows = "1" class="input--style-5" type="text" name="name1" autocomplete="off"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="name">Địa chỉ</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input type="text" class="input--style-5" name="address" value="<%=results[0].address%>" autocomplete="off">
+                                                <!-- <textarea style="width: 100%"  rows = "1" class="input--style-5" type="text" name="name1" autocomplete="off"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--<div class="form-row">
+                                        <div class="name">Content5</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <textarea style="width: 100%" class="input--style-5" type="text" name="content5" autocomplete="off"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="name">Image Link1</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="text" name="image1" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="name">Image Link2</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="text" name="image2" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="name">Image Link3</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="text" name="image3" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row m-b-55">
+                                        <div class="name">Time and Author</div>
+                                        <div class="value">
+                                            <div class="row row-refine">
+                                                <div class="col-6">
+                                                    <div class="input-group-desc">
+                                                        <input class="input--style-5" type="text" name="time" autocomplete="off">
+                                                        <label class="label--desc">Time</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="input-group-desc">
+                                                        <input class="input--style-5" type="text" name="author" autocomplete="off">
+                                                        <label class="label--desc">Author</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>-->
+
+
+
+
+                                    <!-- <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="inputGroupSelect01">Subject</label>
+                                        </div>
+                                        <select class="custom-select" id="inputGroupSelect01" name="type">
+                                            <option selected>Choose subject</option>
+                                            <option value="bongda">Bóng Đá</option>
+                                            <option value="kinhdoanh">Kinh Doanh</option>
+                                            <option value="thitruong">Thị Trường</option>
+                                            <option value="suckhoe">Sức Khỏe</option>
+                                            <option value="hitech">Hi-Tech</option>
+                                            <option value="showbiz">Showbiz</option>
+                                            <option value="thegioi">Thế Giới</option>
+                                            <option value="thethao">Thể Thao</option>
+                                            <option value="phaidep">Phái Đẹp</option>
+                                            <option value="amthuc">Ẩm Thực</option>
+                                        </select>
+                                    </div>-->
+
+                                    <div>
+                                        <button class="btn btn--radius-2 btn--green" type="submit" style="margin-left: 300px; margin-top: 25px; background: #009688">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

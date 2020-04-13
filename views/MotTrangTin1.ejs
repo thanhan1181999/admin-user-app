@@ -16,14 +16,31 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <!-- Font-Awesome-Icons-CSS -->
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
+    <style>
+        .back {
+            color: #009688;
+            font-size: 130%;
+        }
 
+        .back:hover, .back:active {
+            text-decoration: none;
+            color: #009688;
+            font-weight: 700;
+            border-bottom: 2px solid #009688;
+        }
+    </style>
 </head>
 
 <body>
@@ -54,7 +71,10 @@
                             <%=results[0].content1%>
                         </div>
                         <br>
-                        <iframe src="<%=results[0].image1%>" alt=" " style="width: 100%;height:480px"></iframe>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="<%=results[0].image1%>" allowfullscreen>
+                            </iframe>
+                        </div>
                         <div class="tintucChu" style="margin: 5px;">
                             <%=results[0].content2%>
                         </div>
@@ -83,7 +103,7 @@
             </div>
         </div>
     </div>
-    <a href="/xemtindadang/<%=results[0].postManId%>">Về những tin đã đăng</a>
+    <a class= "back" href="/xemtindadang/<%=results[0].postManId%>" style="margin: 80px; padding-bottom: 50px">Back</a>
 </body>
 
 </html>

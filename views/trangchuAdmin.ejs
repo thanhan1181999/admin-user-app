@@ -1,27 +1,105 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Giao diện Admin</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./web/css/style-home.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <ul>
-        <li><a href="/themtaikhoan">Thêm Tài Khoản</a></li>
-        <li><a href="/xoataikhoan">Xóa Tài Khoản</a></li>
-        <li><a href="/xemtin">Xem tin Sửa tin Xóa tin</a></li>
-        <li><a href="/xemgopy">xem góp ý</a></li>
-    </ul>
-    <div style="background-color: black;text-align: center;margin: 50px auto;">
-        <a href="/dangxuat" style="color: white;">Đăng Xuất</a>
-    </div>
+    <header class="Header-old header-logged-out f4 fy-2" role="banner"> 
+        <div class="container-lg d-flex px-3">
+                <ul class="d-flex list-style-none">
+                        <li><a href="/xemtin">Articles</a></li>
+                        <li class="nav-item dropdown">
+                                <a style = "margin-top: -8px;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Authors
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="/themtaikhoan">Add Author</a>
+                                  <a class="dropdown-item" href="/xoataikhoan">Delete Author</a>
+                                </div>
+                              </li>
+                        <li><a href="/dangnhap">LogOut</a></li>
+            </ul>
+        </div>
+    </header> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<title>Xem tin</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()">
+      <i class="fa fa-bars">
+      </i>
+    </a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="/xemtin" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Articles</a>
+    <a href="/xemtaikhoan" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Authors</a>
+    <a href="/xemgopy" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Feedback</a>
+    <a href="/dangxuat" class="w3-bar-item w3-button w3-hide-small w3-hover-white">LogOut</a>
+  </div>
+</div>
+
+          <!-- <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
+
+              <div class="w3-panel">
+                <h1><b>MARK IT AWESOME TOGETHER</b></h1>
+                <p>Đây là trang web quản lí bài viết và tác giả của dự án thiết kế trang web đọc báo do Nhóm 4 lớp Công nghệ phần mềm 10 trường Đại Học Công Nghệ triển khai. 
+                  <br> Nhận thấy được mức độ cần thiết của các trang web tìm kiếm thong tin trong thời đại công nghê, nhóm chúng tôi đã triển khai mô hình đọc báo mới nhằm cung cấp chính xác, nhanh chóng thông tin tới người đọc.
+                  <br> Đối tượng mà chúng tôi hướng đến là toàn bộ người dùng sở hữu thiết bị công nghệ, bao gồm vả PC, laptop, ipad, smartphone, ...</p>
+              </div>
+          </div> -->
+          <div class="w3-panel w3-light-grey" style="margin-top: 100px; width: 800px; margin-left: 200px;">
+            <span style="font-size:150px;line-height:0.6em;opacity:0.2;">❝</span>
+            <p class="w3-xlarge" style="margin-top:-40px"><i>MAKE AWESOME THINGS THAT MATTER</i></p>
+            <p>Đây là trang web quản lí bài viết và tác giả của dự án thiết kế trang web đọc báo do Nhóm 4 lớp Công nghệ phần mềm 10 trường Đại Học Công Nghệ triển khai. 
+              <br> Nhận thấy được mức độ cần thiết của các trang web tìm kiếm thông tin trong thời đại công nghệ, nhóm chúng tôi đã triển khai mô hình đọc báo mới nhằm cung cấp chính xác, nhanh chóng thông tin tới người đọc.
+              <br> Đối tượng mà chúng tôi hướng đến là toàn bộ người dùng sở hữu thiết bị công nghệ, bao gồm cả PC, laptop, ipad, smartphone, ...</p>
+          </div>
+           
+
+    
 </body>
 
 </html>
+
+<!-- input -->

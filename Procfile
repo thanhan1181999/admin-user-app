@@ -1,1 +1,1 @@
-web: node lamlaiDangnhapPasspost.js
+web: node app.js

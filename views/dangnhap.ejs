@@ -50,7 +50,7 @@
                     <span class="fa fa-diamond"></span>
                 </div>
                 <div class="content-bottom">
-                    <form action="#" method="post">
+                    <form name = "login" onsubmit="return check()" action="#" method="post">
 
                         <div class="field-group">
                             <span class="fa fa-user" aria-hidden="true"></span>
@@ -77,6 +77,26 @@
 
         </div>
     </section>
+
+
+    <script>
+        function check(){
+            var username = document.login.username.value;
+            if(username == ""){
+                alert("Bạn chưa nhập username !");
+                document.login.username.focus();
+                return false;
+            }
+
+            var password = document.login.password.value;
+            if(password == ""){
+                alert("Bạn chưa nhập password !");
+                document.login.password.focus();
+                return false;
+            }
+        }
+
+    </script>
 
 </body>
 <!-- //Body -->

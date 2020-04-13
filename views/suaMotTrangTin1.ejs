@@ -16,117 +16,208 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <!-- Font-Awesome-Icons-CSS -->
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
 </head>
 
 <body>
     <!--thanh dieu huong-->
 
-
-
     <div id="about" class="section">
         <div class="container">
             <div class="row">
-                <form action="" method="post">
+                <form action="" method="post" name="update" onsubmit="return check()">
                     <div class="col-md-8">
                         <!--các link điều hướng TRANG CHỦ, BÓNG ĐÁ-->
                         <!--tên chính của tin------------------------------------>
                         <h1 id="header1">
-                            <h5>name</h5>
-                            <textarea style="width: 100%;" name="name" rows="5" type="text" value="<%=results[0].name%>" autocomplete="off"><%=results[0].name%></textarea>
+                            <h5><b>Tên chính</b></h5>
+                            <textarea style="width: 100%" name="name" rows="2" type="text" value="<%=results[0].name%>" autocomplete="off"><%=results[0].name%></textarea>
                         </h1>
+                        <h1 id="header1">
+                            <h5><b>Tên phụ</b></h5>
+                            <textarea style="width: 100%" name="name1" rows="2" type="text" value="<%=results[0].name1%>" autocomplete="off"><%=results[0].name1%></textarea>
+                        </h1>
+
                         <!--ngày tháng năm VÀ chia sẻ mạng xã hội------------------>
-                        <div class="thoigianLink">
-                            <div class="thoigian" style="margin-top: 9px;">
-                                <h5>time</h5>
-                                <textarea style="width: 100%;" name="time" rows="5" type="text" value="<%=results[0].time%>" autocomplete="off"><%=results[0].time%></textarea>
-                            </div>
-                            <br>
 
-                            <br>
-                            <div class="tintucChu" style="margin: 5px;">
-                                <h5>image1</h5>
-                                <textarea style="width: 100%;" name="image1" rows="5" type="text" value="<%=results[0].image1%>" autocomplete="off"><%=results[0].image1%></textarea>
-                            </div>
-                            <div class="tintucChu" style="margin: 5px;">
-                                <h5>image2</h5>
-                                <textarea style="width: 100%;" name="image2" rows="5" type="text" value="<%=results[0].image2%>" autocomplete="off"><%=results[0].image2%></textarea>
-                            </div>
-                            <!--tin tức------------------------------------------------------------------------------------------------------------------------------------------>
-                            <div class="tintucChu" style="margin: 5px;">
-                                <h5>content1</h5>
-                                <textarea style="width: 100%;" name="content1" rows="5" type="text" value="<%=results[0].content1%>" autocomplete="off"><%=results[0].content1%></textarea>
-                            </div>
-                            <br>
-
-                            <br>
-                            <div class="tintucChu" style="margin: 5px;">
-                                <h5>content2</h5>
-                                <textarea style="width: 100%;" name="content2" rows="5" type="text" value="<%=results[0].content2%>" autocomplete="off"><%=results[0].content2%></textarea>
-                            </div>
-                            <br>
-
-
-                            <div class="tintucChu" style="margin: 5px;">
-                                <h5>content3</h5>
-                                <textarea style="width: 100%;" name="content3" rows="5" type="text" value="<%=results[0].content3%>" autocomplete="off"><%=results[0].content3%></textarea>
-                            </div>
-                            <div class="tintucChu" style="margin: 5px;">
-                                <h5>content4</h5>
-                                <textarea style="width: 100%;" name="content4" rows="5" type="text" value="<%=results[0].content4%>" autocomplete="off"><%=results[0].content4%></textarea>
-                            </div>
-                            <div class="tintucChu" style="margin: 5px;">
-                                <h5>content5</h5>
-                                <textarea style="width: 100%;" name="content5" rows="5" type="text" value="<%=results[0].content5%>" autocomplete="off"><%=results[0].content5%></textarea>
-                            </div>
-                            <br>
-                            <div style="float: right;padding-top: 7px">
-                                <span><b>         
-                                    <h5>author</h5>                     
-                                        <textarea style="width: 100%;" name="author" rows="5" type="text" value="<%=results[0].author%>" autocomplete="off"><%=results[0].author%></textarea>
-                                </b></span>
-                                <span><b>                              
-                                    <select name="hot" type="text" autocomplete="off">
-                                            <option value="N">Không là tin hót</option>
-                                    </select>
-                                </b></span>
-                                <span><b>                              
-                                    <select name="type" type="text" autocomplete="off">
-                                        <option value="<%=results[0].type%>"><%=results[0].type%></option>
-                                        <option value="bongda">Bóng đá</option>
-                                        <option value="kinhdoanh">Kinh doanh</option>
-                                        <option value="bongda">Bóng đá</option>
-                                        <option value="kinhdoanh">Kinh doanh</option>
-                                        <option value="thitruong">Thị trường</option>
-                                        <option value="suckhoe">Sức khỏe</option>
-                                        <option value="hitech">Hi-Tech</option>
-                                        <option value="showbiz">Showbiz</option>
-                                        <option value="thegioi">Thế Giới</option>
-                                        <option value="thethao">Thể thao</option>
-                                        <option value="phaidep">Phái đẹp</option>
-                                        <option value="amthuc">Ẩm thực</option>
-                                    </select>
-                                </b></span>
-                            </div>
+                        <div class="thoigian" style="margin-top: 9px;">
+                            <h5><b>Time</b></h5>
+                            <textarea style="width: 100%" name="time" rows="2" type="text" value="<%=results[0].time%>" autocomplete="off"><%=results[0].time%></textarea>
                         </div>
-                        <!--2 div tin nhỏ hơn---------------------------------------------------------------------------->
 
-                        <!--phần giữ nguyên-->
+                        <div class="tintucChu" style="margin: 5px;">
+                            <h5><b>Image1</b></h5>
+                            <textarea style="width: 100%" name="image1" rows="2" type="text" value="<%=results[0].image1%>" autocomplete="off"><%=results[0].image1%></textarea>
+                        </div>
 
+                        <div class="tintucChu" style="margin: 5px;">
+                            <h5><b>Image2</b></h5>
+                            <textarea style="width: 100%" name="image2" rows="2" type="text" value="<%=results[0].image2%>" autocomplete="off"><%=results[0].image2%></textarea>
+                        </div>
+
+                        <div class="tintucChu" style="margin: 5px;">
+                            <h5><b>Image3</b></h5>
+                            <textarea style="width: 100%" name="image3" rows="2" type="text" value="<%=results[0].image2%>" autocomplete="off"><%=results[0].image3%></textarea>
+                        </div>
+
+
+                        <!--tin tức------------------------------------------------------------------------------------------------------------------------------------------>
+                        <div class="tintucChu" style="margin: 5px;">
+                            <h5><b>Content1</b></h5>
+                            <textarea style="width: 1100px" name="content1" rows="5" type="text" value="<%=results[0].content1%>" autocomplete="off"><%=results[0].content1%></textarea>
+                        </div>
+
+                        <div class="tintucChu" style="margin: 5px;">
+                            <h5><b>Content2</b></h5>
+                            <textarea style="width: 1100px" name="content2" rows="5" type="text" value="<%=results[0].content2%>" autocomplete="off"><%=results[0].content2%></textarea>
+                        </div>
+
+                        <div class="tintucChu" style="margin: 5px;">
+                            <h5><b>Content3</b></h5>
+                            <textarea style="width: 1100px" name="content3" rows="5" type="text" value="<%=results[0].content3%>" autocomplete="off"><%=results[0].content3%></textarea>
+                        </div>
+
+                        <div class="tintucChu" style="margin: 5px;">
+                            <h5><b>Content4</b></h5>
+                            <textarea style="width: 1100px" name="content4" rows="5" type="text" value="<%=results[0].content4%>" autocomplete="off"><%=results[0].content4%></textarea>
+                        </div>
+
+                        <div class="tintucChu" style="margin: 5px;">
+                            <h5><b>Content5</b></h5>
+                            <textarea style="width: 1100px" name="content5" rows="5" type="text" value="<%=results[0].content5%>" autocomplete="off"><%=results[0].content5%></textarea>
+                        </div>
+
+                        <div style="padding-top: 7px">
+                            <span><b>
+                                    <h5><b>Author</b></h5>
+                                    <textarea style="width: 1100px; margin-bottom: 30px" name="author" rows="1"
+                                        type="text" value="<%=results[0].author%>"
+                                        autocomplete="off"><%=results[0].author%></textarea>
+                                </b></span>
+
+                            <span><b>
+                                    <select name="hot" type="text" autocomplete="off">
+                                        <option value="<%=results[0].hot%>"><%=results[0].hot%></option>
+                                        <option value="Y">Là tin hót</option>
+                                        <option value="N">Không là tin hót</option>
+                                        <option value="YY">Là tin rất hót</option>
+                                    </select>
+                                </b></span>
+                            <span><input type="text" value="<%=results[0].type%>" name="type" readonly></span>
+                        </div>
                     </div>
-                    <input type="submit" value="sửa tin">
-                    <a href="/xemtindadang/<%=results[0].postManId%>">Về tin đã đăng</a>
-                </form>
+                    <!--2 div tin nhỏ hơn---------------------------------------------------------------------------->
+
+                    <!--phần giữ nguyên-->
+
+                    <br>
             </div>
+            <input type="submit" value="sửa tin">
+            <a href="/xemtindadang/<%=results[0].postManId%>">Về tin đã đăng</a>
+            </form>
         </div>
     </div>
+    </div>
+
+    <script>
+        function check() {
+            var name = document.add.name.value;
+            if (name == "") {
+                alert("Bạn chưa nhập tiêu đề bài viết");
+                document.add.name.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+
+            var name1 = document.add.name1.value;
+            if (name1 == "") {
+                alert("Bạn chưa nhập tiêu đề phụ bài viết");
+                document.add.name1.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+            var content1 = document.add.content1.value;
+            if (content1 == "") {
+                alert("Bạn chưa nhập nội dung bài viết");
+                document.add.content1.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+            var content2 = document.add.content2.value;
+            if (content2 == "") {
+                alert("Bạn chưa nhập nội dung bài viết");
+                document.add.content2.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+            var content3 = document.add.content3.value;
+            if (content3 == "") {
+                alert("Bạn chưa nhập nội dung bài viết");
+                document.add.content3.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+            var content4 = document.add.content4.value;
+            if (content4 == "") {
+                alert("Bạn chưa nhập nội dung bài viết");
+                document.add.content4.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+            var content5 = document.add.content5.value;
+            if (content5 == "") {
+                alert("Bạn chưa nhập nội dung bài viết");
+                document.add.content5.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+
+            var image1 = document.add.image1.value;
+            if (image1 == "") {
+                alert("Bạn chưa nhập link ảnh");
+                document.add.image1.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+            var image2 = document.add.image2.value;
+            if (image2 == "") {
+                alert("Bạn chưa nhập link ảnh");
+                document.add.image2.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+            var image3 = document.add.image3.value;
+            if (image3 == "") {
+                alert("Bạn chưa nhập link ảnh");
+                document.add.image3.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+
+            var time = document.add.time.value;
+            if (time == "") {
+                alert("Bạn chưa nhập thời gian");
+                document.add.time.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+
+            var author = document.add.author.value;
+            if (author == "") {
+                alert("Bạn chưa nhập tên tác giả");
+                document.add.author.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+
+            var subject = document.them.type.value;
+            if (subject == "") {
+                alert("Bạn chưa nhập chủ đề của bài viết");
+                document.them.type.focus();
+                return false;
+            }
+
+
+            return true;
+
+
+        }
+    </script>
 </body>
 
 </html>

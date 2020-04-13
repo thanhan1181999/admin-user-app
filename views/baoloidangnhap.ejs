@@ -6,12 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Báo Lỗi</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        a{
+            color: red;
+        }
+
+        a:hover, a:active{
+            text-decoration: none;
+            color: red;
+            border-bottom: 1px solid red;
+        }
+
+    </style>
 </head>
 
 <body>
-
-    <div style="background-color:green;text-align: center">
-        <h1>Bạn chưa đăng nhập!</h1>
+    <div style = "width: 600px; margin-left: 300px; margin-top: 50px" class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Lỗi !!!</h4>
+        <p>Bạn đã bị out khỏi hệ thống !</p>
+        <hr>
+        <p class="mb-0">Vui lòng đăng nhập lại. Thanks !</p>
         <a href="/">Đăng nhập</a>
     </div>
 

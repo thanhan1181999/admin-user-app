@@ -1,47 +1,103 @@
 <!-- <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Góp Ý</title>
+    <title>Xóa tài khoản</title>
+    <style>
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 1px;
+            box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+            background-color: green;
+        }
+        
+        div {
+            background-color: #f2f2f2;
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        
+        .div1 {
+            border: 1px solid red;
+        }
+        
+        .div2 {
+            background-color: aqua;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <table style="margin: 20px auto;width: 100%;">
-        <thead>
-            <th>Name</th>
-            <th>address</th>
-            <th>feedback</th>
-        </thead>
-        <tbody>
-            <% 
-                    results.forEach(function(rows){
-                    %>
-                <tr>
+    <ul>
+        <li><a href="/admin">Trang chủ Admin</a></li>
+    </ul>
 
-                    <td>
-                        <%=rows.name%>
-                    </td>
+    <div style="font-size: 50px;text-align: center;color: green;margin: 20px auto">Xóa tài khoản</div>
 
-                    <td>
-                        <%=rows.address%>
-                    </td>
-                    <td>
-                        <%=rows.feedback%>
-                    </td>
-                    <td>
-                        <a href="xoagopy/<%=rows.id%>">Delete</a>
-                    </td>
+    <div>
+        <form action="" method="POST">
+            <div class="container-fluid">
+                <div class="row">
 
-                </tr>
-                <%
-                    }) 
-                %>
-        </tbody>
-    </table>
+                    <div class="col-sm-3" style="background-color:green;">
 
+                        <div class="div1 div2">Name</div>
+                    </div>
+
+                    <div class="col-sm-9" style="background-color:green;">
+                        <select name="name" type="text" autocomplete="off">
+
+
+                            <% 
+                                results.forEach(function(rows){
+                                %>
+                                <option value="<%=rows.user%>"><%=rows.user%></option>
+                                <%
+                                }
+                                ) 
+                            %>
+
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Xóa tài khoản" value="">
+        </form>
+    </div>
+    <div style="background-color: black;text-align: center;margin: 50px auto;">
+        <a href="/dangxuat" style="color: white;">Đăng Xuất</a>
+    </div>
 </body>
 
 </html> -->
@@ -89,8 +145,8 @@ a:hover, a:active{
     <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
     <a href="/admin" class="w3-bar-item w3-button w3-hide-small w3-hover-white ">Home</a>
     <a href="/xemtin" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Articles</a>
-    <a href="/xemtaikhoan" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Authors</a>    
-    <a href="#" class="w3-bar-item w3-button  w3-theme-l5">Feedback</a>
+    <a href="#" class="w3-bar-item w3-button  w3-theme-l5">Authors</a>    
+    <a href="/xemgopy" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Feedback</a>
     <a href="/dangxuat" class="w3-bar-item w3-button w3-hide-small w3-hover-white">LogOut</a>
   </div>
 </div>
@@ -102,7 +158,9 @@ a:hover, a:active{
     <i class="fa fa-remove"></i>
   </a>
   <h4 class="w3-bar-item"><b>Menu</b></h4>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Danh sách góp ý</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/xemtaikhoan">Danh sách tác giả</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/themtaikhoan">Thêm tác giả</a>
+  
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -111,14 +169,14 @@ a:hover, a:active{
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <div class="w3-main" style="margin-left:200px">
   <div class="w3-container" style="margin-top: 50px">
-    <h1 class="w3-text-teal">Danh sách góp ý</h1>
-
+    <h1 class="w3-text-teal">Danh sách tác giả</h1>
     <table class="w3-table-all w3-hoverable">
         <thead>
                 <tr class="w3-light-grey">
                     <th>Name</th>
-                    <th>Address</th>
-                    <th>Feedback</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>User</th>
                     <th></th>
                 </tr>
         </thead>
@@ -128,17 +186,19 @@ a:hover, a:active{
                 <tr>
 
                     <td>
-                        <%=rows.name%>
+                        <%=rows.name%></td>
+
+                    <td>
+                        <%=rows.email%>
                     </td>
 
                     <td>
-                        <%=rows.address%>
+                        <%=rows.phone%>
                     </td>
+                    <td><%=rows.user%></td>
+                    
                     <td>
-                        <%=rows.feedback%>
-                    </td>
-                    <td>
-                        <a onclick = "alert('Delete successful !')" href="xoagopy/<%=rows.id%>">Delete</a>
+                        <a name = "delete" onclick = "alert('Delete successful !') " href="/xoataikhoan/<%=rows.id%>">Delete</a>
                     </td>
 
                 </tr>
@@ -146,9 +206,12 @@ a:hover, a:active{
                     }) 
                 %>
       </table>
-    </div>
+
+
+
+
   </div>
-  
+
 
 
   <script>
@@ -175,7 +238,11 @@ a:hover, a:active{
       overlayBg.style.display = "none";
     }
 
-
+    function confirmDelete(){
+        if(!confirm('Are you sure')){
+            return false;
+        } else return true;
+    }
     </script>
     
 

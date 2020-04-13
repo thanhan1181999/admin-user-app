@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -87,4 +87,197 @@
     </div>
 </body>
 
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<title>Xem tin</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+
+a:hover, a:active{
+  text-decoration: none;
+}
+
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="/admin" class="w3-bar-item w3-button w3-hide-small w3-hover-white ">Home</a>
+    <a href="/xemtin" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Articles</a>
+    <a href="#" class="w3-bar-item w3-button  w3-theme-l5">Authors</a>    
+    <a href="/xemgopy" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Feedback</a>
+    <a href="/dangxuat" class="w3-bar-item w3-button w3-hide-small w3-hover-white">LogOut</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar" style="width: 200px">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" 
+  title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Menu</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/xemtaikhoan">Danh sách tác giả</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/themtaikhoan">Thêm tác giả</a>
+  
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:200px">
+  <div class="w3-container" style="margin-top: 50px">
+    <form name="them" onsubmit="return check()" action="" method="POST" class="w3-container  w3-margin">
+        <h1 class="w3-text-teal w3-center" >Thêm tác giả</h1>
+         
+        <div class="w3-row w3-section">
+          <div class="w3-col" style="width:100px; margin: 7px; text-align: center">Họ và tên</div>
+            <div class="w3-rest" style="margin-right: 30px">
+              <input class="w3-input w3-border" name="name" type="text" >
+              <!-- <input class="w3-input w3-border w3-animate-input" type="text" style="width:30%"> -->
+            </div>
+        </div>
+        
+        <div class="w3-row w3-section">
+          <div class="w3-col" style="width:100px; margin: 7px; text-align: center">Email</div>
+            <div class="w3-rest" style="margin-right: 30px">
+              <input class="w3-input w3-border" name="email" type="text" >
+            </div>
+        </div>
+        
+        <div class="w3-row w3-section">
+          <div class="w3-col" style="width:100px; margin: 7px; text-align: center">SĐT</div>
+            <div class="w3-rest" style="margin-right: 30px">
+              <input class="w3-input w3-border" name="phone" type="text" >
+            </div>
+        </div>
+
+        <div class="w3-row w3-section">
+            <div class="w3-col" style="width:100px; margin: 7px; text-align: center">Tên đăng nhập</div>
+              <div class="w3-rest" style="margin-right: 30px">
+                <input class="w3-input w3-border" name="user" type="text" >
+              </div>
+          </div>
+        
+        <div class="w3-row w3-section">
+          <div class="w3-col" style="width:100px; margin: 7px; text-align: center">Password</div>
+            <div class="w3-rest" style="margin-right: 30px">
+              <input class="w3-input w3-border" name="password" type="password">
+            </div>
+        </div>
+
+        <div class="w3-row w3-section">
+            <div class="w3-col" style="width:100px; margin: 7px; text-align: center; margin-top: -3px">Confirm password</div>
+              <div class="w3-rest" style="margin-right: 30px">
+                <input class="w3-input w3-border" name="confirmPass" type="password">
+              </div>
+          </div>
+        
+      <!-- <button type="submit" class="w3-btn w3-white w3-border w3-round-large" style="margin-left: 430px; margin-bottom: 30px;">Add</button> -->
+      <button type="submit" class="w3-button w3-white w3-border w3-round-large" style="margin-left: 430px; margin-bottom: 30px">Add</button>
+     
+        </form>
+    </div>
+  </div>
+  
+  <script>
+    // Get the Sidebar
+    var mySidebar = document.getElementById("mySidebar");
+    
+    // Get the DIV with overlay effect
+    var overlayBg = document.getElementById("myOverlay");
+    
+    // Toggle between showing and hiding the sidebar, and add overlay effect
+    function w3_open() {
+      if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+      } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+        
+      }
+    }
+    
+    // Close the sidebar with the close button
+    function w3_close() {
+      mySidebar.style.display = "none";
+      overlayBg.style.display = "none";
+    }
+
+    //hamf check xem da nhap du thong tin chua
+    function check() {
+            var name = document.them.name.value;
+            if (name == "") {
+                alert("Bạn chưa nhập tên tác giả");
+                document.them.name.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+            var email = document.them.email.value;
+            if (email == "") {
+                alert("Bạn chưa nhập email");
+                document.them.email.focus();
+                return false;
+            }
+            var phone = document.them.phone.value;
+            if (phone == "") {
+                alert("Bạn chưa nhập số điện thoại");
+                document.them.name.focus();
+                return false;
+            }
+            var user = document.them.user.value;
+            if (user == "") {
+                alert("Bạn chưa nhập tên đăng nhập");
+                document.them.user.focus();
+                return false;
+            }
+            var password = document.them.password.value;
+            if (password == "") {
+                alert("Bạn chưa nhập mật khẩu");
+                document.them.password.focus();
+                return false;
+            }
+            
+            var conf = document.them.confirmPass.value;
+            if (conf == "") {
+                alert("Bạn chưa xác nhận mật khẩu");
+                document.them.confirmPass.focus();
+                return false;
+            } else if (conf != password) {
+                alert("Bạn xác nhận mật khẩu chưa đúng");
+                document.them.confirmPass.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+    
+
+</body>
 </html>

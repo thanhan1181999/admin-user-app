@@ -16,13 +16,21 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <!-- Font-Awesome-Icons-CSS -->
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+    <style>
+        .cmt {
+            background: #f4f4f4;
+        }
+        
+        
+    </style>
 
 </head>
 
@@ -40,6 +48,9 @@
                     <h1 id="header1">
                         <%=results[0].name%>
                     </h1>
+                    <h3 id="header1">
+                        <%=results[0].name1%>
+                    </h3>
                     <!--ngày tháng năm VÀ chia sẻ mạng xã hội------------------>
                     <div class="thoigianLink">
                         <div class="thoigian" style="margin-top: 9px;">
@@ -54,36 +65,71 @@
                             <%=results[0].content1%>
                         </div>
                         <br>
-                        <iframe src="<%=results[0].image1%>" alt=" " style="width: 100%;height:480px"></iframe>
+
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="<%=results[0].image1%>" allowfullscreen>
+                            </iframe>
+                        </div>
+
                         <div class="tintucChu" style="margin: 5px;">
                             <%=results[0].content2%>
                         </div>
                         <br>
+
                         <img src="<%=results[0].image2%>" alt=" " style="width: 100%">
+
                         <div class="tintucChu" style="margin: 5px;">
                             <%=results[0].content3%>
                         </div>
+
                         <div class="tintucChu" style="margin: 5px;">
                             <%=results[0].content4%>
                         </div>
+
+                        <img src="<%=results[0].image3%>" alt=" " style="width: 100%">
+
                         <div class="tintucChu" style="margin: 5px;">
                             <%=results[0].content5%>
                         </div>
                         <br>
-                        <div style="float: right;padding-top: 7px">
+
+                        <div style="float: right; margin-bottom: 10px">
                             <span><b><%=results[0].author%></b></span>
                         </div>
+
+                        <hr style="color: black">
+
+
+                        <!--Admin cập nhất các thông tin của bài viết-->
+                        <div class="cmt" style="margin-bottom: 50px; padding: 20px">
+                            <h3><b>Nhận xét của admin</b> </h3>
+
+                            <div>
+                                <h4>
+                                    Thay đổi mức độ hot của bài viết:
+
+                                </h4>
+
+                                <form action="" method="post" style="margin: 10px">
+                                    <select name="hot" type="text" autocomplete="off" ">
+                                        <option value="Y">Là tin hót</option>
+                                        <option value="N">Không là tin hót</option>
+                                        <option value="YY">Là tin rất hót</option>
+                                    </select>
+                                    <!-- <a href="/hienxemtin/<%=results[0].type%>">Back</a> -->
+                                    <button class="btn btn-info" href="/hienxemtin/<%=results[0].type%>" style="margin-left : 10px">Back</button>
+                                    <!-- <input style="margin-left : 10px" type="submit" value="update"> -->
+                                    <input style="margin-left : 10px" type="submit" value="Update" class="btn btn-info">
+                                </form>
+                            </div>
+                        </div>
+
                     </div>
                     <!--2 div tin nhỏ hơn---------------------------------------------------------------------------->
 
-                    <!--phần giữ nguyên-->
-
                 </div>
-
             </div>
-        </div>
-    </div>
-    <a href="/hienxemtin/<%=results[0].type%>">Về những tin cùng chủ đề</a>
+
 </body>
 
 </html>

@@ -1,124 +1,346 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
+<title>Xem tin</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Thêm tin</title>
-    <style>
-        input[type=text],
-        select {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 1px;
-            box-sizing: border-box;
-        }
-        
-        input[type=submit] {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        input[type=submit]:hover {
-            background-color: green;
-        }
-        
-        div {
-            background-color: #f2f2f2;
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border-radius: 6px;
-            box-sizing: border-box;
-        }
-        
-        .div1 {
-            border: 1px solid red;
-        }
-        
-        .div2 {
-            background-color: aqua;
-            text-align: center;
-        }
-    </style>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="./web/css/addNew.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Roboto", sans-serif;
+    }
+    
+    .w3-sidebar {
+        z-index: 3;
+        width: 250px;
+        top: 43px;
+        bottom: 0;
+        height: inherit;
+    }
+    
+    a:hover,
+    a:active {
+        text-decoration: none;
+    }
+</style>
 
 <body>
-    <ul>
-        <li><a href="/user">Trang chủ</a></li>
-    </ul>
 
-    <div style="font-size: 50px;text-align: center;color: green;margin: 20px auto">Thêm Một Trang Tin</div>
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+            <a href="/user" class="w3-bar-item w3-button w3-hide-small w3-hover-white ">Home</a>
+            <a href="#" class="w3-bar-item w3-button w3-theme-l5">Articles</a>
+            <a href="/suataikhoan/<%=userID%>" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+            <a href="/dangxuat" class="w3-bar-item w3-button w3-hide-small w3-hover-white">LogOut</a>
 
-    <div>
-        <form action="" method="POST">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-3" style="background-color:green;">
 
-                        <div class="div1 div2">TYPE</div>
-                        <div class="div1 div2">HOT</div>
-                        <div class="div1 div2">NAME</div>
-                        <div class="div1 div2">TIME</div>
-                        <div class="div1 div2">TÁC GIẢ</div>
-                        <div class="div1 div2">CONTENT1</div>
-                        <div class="div1 div2">CONTENT2</div>
-                        <div class="div1 div2">CONTENT3</div>
-                        <div class="div1 div2">CONTENT4</div>
-                        <div class="div1 div2">CONTENT5</div>
-                        <div class="div1 div2">IMGAGE1</div>
-                        <div class="div1 div2">IMAGE2</div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar" style="width: 200px">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+            <i class="fa fa-remove"></i>
+        </a>
+        <h4 class="w3-bar-item"><b>Menu</b></h4>
+        <a class="w3-bar-item w3-button w3-hover-black" href="/xemtindadang/<%=userID%>">Tin đã đăng </a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="#">Thêm tin mới</a>
+
+    </nav>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+    <div class="w3-main" style="margin-left:200px">
+        <div class="w3-container" style="margin-top: 50px">
+            <div>
+                <div class="page-wrapper ">
+                    <div class="wrapper wrapper--w790">
+                        <div class="card card-5">
+                            <div class="card-heading">
+                                <h1 class="w3-text-teal w3-center">Thêm tin mới</h1>
+                            </div>
+
+                            <div class="card-body">
+                                <form action="" method="POST" name="add" onsubmit=" return check()">
+
+                                    <div class="form-row">
+                                        <div class="name">Tên chính</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="text" name="name" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="name">Tên phụ</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input type="text" class="input--style-5" name="name1" autocomplete="off">
+                                                <!-- <textarea style="width: 100%"  rows = "1" class="input--style-5" type="text" name="name1" autocomplete="off"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="name">Content1</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <textarea style="width: 100%" class="input--style-5" type="text" name="content1" autocomplete="off"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="name">Content2</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <textarea style="width: 100%" class="input--style-5" type="text" name="content2" autocomplete="off"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="name">Content3</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <textarea style="width: 100%" class="input--style-5" type="text" name="content3" autocomplete="off"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="name">Content4</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <textarea style="width: 100%" class="input--style-5" type="text" name="content4" autocomplete="off"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="name">Content5</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <textarea style="width: 100%" class="input--style-5" type="text" name="content5" autocomplete="off"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="name">Image Link1</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="text" name="image1" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="name">Image Link2</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="text" name="image2" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="name">Image Link3</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="text" name="image3" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row m-b-55">
+                                        <div class="name">Time and Author</div>
+                                        <div class="value">
+                                            <div class="row row-refine">
+                                                <div class="col-6">
+                                                    <div class="input-group-desc">
+                                                        <input class="input--style-5" type="text" name="time" autocomplete="off">
+                                                        <label class="label--desc">Time</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="input-group-desc">
+                                                        <input class="input--style-5" type="text" name="author" autocomplete="off">
+                                                        <label class="label--desc">Author</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="inputGroupSelect01">Subject</label>
+                                        </div>
+                                        <select class="custom-select" id="inputGroupSelect01" name="type">
+                                            <option selected>Choose subject</option>
+                                            <option value="bongda">Bóng Đá</option>
+                                            <option value="kinhdoanh">Kinh Doanh</option>
+                                            <option value="thitruong">Thị Trường</option>
+                                            <option value="suckhoe">Sức Khỏe</option>
+                                            <option value="hitech">Hi-Tech</option>
+                                            <option value="showbiz">Showbiz</option>
+                                            <option value="thegioi">Thế Giới</option>
+                                            <option value="thethao">Thể Thao</option>
+                                            <option value="phaidep">Phái Đẹp</option>
+                                            <option value="amthuc">Ẩm Thực</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <button class="btn btn--radius-2 btn--green" type="submit" style="margin-left: 300px; margin-top: 25px; background: #009688">Add
+                                            News</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-9" style="background-color:green;">
-                        <select name="type" type="text" autocomplete="off">
-                                <option value="bongda">Bóng đá</option>
-                                <option value="kinhdoanh">Kinh doanh</option>
-                                <option value="thitruong">Thị trường</option>
-                                <option value="suckhoe">Sức khỏe</option>
-                                <option value="hitech">Hi-Tech</option>
-                                <option value="showbiz">Showbiz</option>
-                                <option value="thegioi">Thế Giới</option>
-                                <option value="thethao">Thể thao</option>
-                                <option value="phaidep">Phái đẹp</option>
-                                <option value="amthuc">Ẩm thực</option>
-                        </select>
-                        <select name="hot" type="text" autocomplete="off">
-                          <option value="N">Không là tin hót</option>
-                        </select>
-                        <input name="name" type="text" placeholder="Your Name.." autocomplete="off">
-                        <input name="time" type="text" placeholder="Your Time.." autocomplete="off">
-                        <input name="author" type="text" placeholder="Your Author.." autocomplete="off">
-                        <input name="content1" type="text" placeholder="Your Content.." autocomplete="off">
-                        <input name="content2" type="text" placeholder="Your Content.." autocomplete="off">
-                        <input name="content3" type="text" placeholder="Your Content.." autocomplete="off">
-                        <input name="content4" type="text" placeholder="Your Content.." autocomplete="off">
-                        <input name="content5" type="text" placeholder="Your Content.." autocomplete="off">
-                        <input name="image1" type="text" placeholder="Your link image.." autocomplete="off">
-                        <input name="image2" type="text" placeholder="Your link image.." autocomplete="off">
-                    </div>
-
                 </div>
             </div>
-            <input type="submit" value="Thêm tin">
-        </form>
+        </div>
     </div>
-    <div style="background-color: black;text-align: center;margin: 50px auto;">
-        <a href="/dangxuat" style="color: white;">Đăng Xuất</a>
-    </div>
+
+    <script>
+        // Get the Sidebar
+        var mySidebar = document.getElementById("mySidebar");
+
+        // Get the DIV with overlay effect
+        var overlayBg = document.getElementById("myOverlay");
+
+        // Toggle between showing and hiding the sidebar, and add overlay effect
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+                overlayBg.style.display = "none";
+            } else {
+                mySidebar.style.display = 'block';
+                overlayBg.style.display = "block";
+
+            }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+            overlayBg.style.display = "none";
+        }
+
+        function check() {
+            var name = document.add.name.value;
+            if (name == "") {
+                alert("Bạn chưa nhập tiêu đề bài viết");
+                document.add.name.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+
+            var name1 = document.add.name1.value;
+            if (name1 == "") {
+                alert("Bạn chưa nhập tiêu đề phụ bài viết");
+                document.add.name1.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+            var content1 = document.add.content1.value;
+            if (content1 == "") {
+                alert("Bạn chưa nhập nội dung bài viết");
+                document.add.content1.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+            var content2 = document.add.content2.value;
+            if (content2 == "") {
+                alert("Bạn chưa nhập nội dung bài viết");
+                document.add.content2.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+            var content3 = document.add.content3.value;
+            if (content3 == "") {
+                alert("Bạn chưa nhập nội dung bài viết");
+                document.add.content3.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+            var content4 = document.add.content4.value;
+            if (content4 == "") {
+                alert("Bạn chưa nhập nội dung bài viết");
+                document.add.content4.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+            var content5 = document.add.content5.value;
+            if (content5 == "") {
+                alert("Bạn chưa nhập nội dung bài viết");
+                document.add.content5.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+
+            var image1 = document.add.image1.value;
+            if (image1 == "") {
+                alert("Bạn chưa nhập link ảnh");
+                document.add.image1.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+            var image2 = document.add.image2.value;
+            if (image2 == "") {
+                alert("Bạn chưa nhập link ảnh");
+                document.add.image2.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+            var image3 = document.add.image3.value;
+            if (image3 == "") {
+                alert("Bạn chưa nhập link ảnh");
+                document.add.image3.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+
+            var time = document.add.time.value;
+            if (time == "") {
+                alert("Bạn chưa nhập thời gian");
+                document.add.time.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+
+            var author = document.add.author.value;
+            if (author == "") {
+                alert("Bạn chưa nhập tên tác giả");
+                document.add.author.focus(); //cho con tro chuot vao coi input thieu
+                return false;
+            }
+
+            var subject = document.them.type.value;
+            if (subject == "") {
+                alert("Bạn chưa nhập chủ đề của bài viết");
+                document.them.type.focus();
+                return false;
+            }
+
+
+            return true;
+
+
+        }
+    </script>
+
+
 </body>
 
 </html>
